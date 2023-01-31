@@ -16,11 +16,13 @@ public class DatabaseContext : DbContext
         //Required Properties
         modelBuilder.Entity<Faction>()
             .Property(f => f.factionId)
-            .IsRequired();
+            .IsRequired()
+            .IsUnicode();
 
         modelBuilder.Entity<Faction>()
             .Property(f => f.factionName)
-            .IsRequired();
+            .IsRequired()
+            .IsUnicode();
     }
     
     public DbSet<Faction> FactionsTable { get; set; }
