@@ -1,4 +1,5 @@
 using Application;
+using Application.DTOs.Request;
 using Application.Interfaces;
 using Application.Validators;
 using Domain;
@@ -49,12 +50,42 @@ public class FactionServiceTests
     [InlineData(0)]
     public void ReadFaction_WithInvalidID_ShouldArgumentOutOfRangeExceptionWithMessage(int id)
     {
-        var factionRepository = new Mock<IFactionRepository>().Object;
+        IFactionRepository factionRepository = new Mock<IFactionRepository>().Object;
         FactionValidator factionValidator = new Mock<FactionValidator>().Object;
-        var factionService = new FactionService(factionRepository, factionValidator);
+        FactionService factionService = new FactionService(factionRepository, factionValidator);
 
         Action test = () => factionService.ReadFaction(id);
         
         test.Should().Throw<ValidationException>().WithMessage("Faction ID must be greater than 0.");
+    }
+
+    [Fact]
+    public void CreateFaction_WithNullAsObject_ThrowsNullExceptionWithMessage()
+    {
+        IFactionRepository factionRepository = new Mock<IFactionRepository>().Object;
+        FactionValidator factionValidator = new Mock<FactionValidator>().Object;
+        
+        IFactionService factionService = new FactionService(factionRepository, factionValidator);
+        
+        Action test = () => factionService.CreateFaction(null);
+        test.Should().Throw<NullReferenceException>().WithMessage("Faction cannot be null.");
+    }
+
+    [Theory]
+    [InlineData(0, "Test Faction", "Faction ID must be greater than 0.")]
+    [InlineData(-1, "Test Faction", "Faction ID must be greater than 0.")]
+    [InlineData(1, "", "Faction name cannot be empty.")]
+    [InlineData(1, null, "Faction name cannot be empty.")]
+    public void CreateFactionWith_InvalidProperties_ShouldThrowFluentValidationExceptionWithMessage(int factionId, String factionName, String exceptionMessage)
+    {
+        IFactionRepository factionRepository = new Mock<IFactionRepository>().Object;
+        FactionValidator factionValidator = new FactionValidator();
+        
+        IFactionService factionService = new FactionService(factionRepository, factionValidator);
+        
+        FactionRequest factionRequest = new FactionRequest();
+        
+        Action test = () => factionService.CreateFaction(factionRequest);
+        test.Should().Throw<ValidationException>().WithMessage(exceptionMessage);
     }
 }

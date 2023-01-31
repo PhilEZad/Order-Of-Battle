@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.DTOs.Request;
+using Application.Interfaces;
 using Application.Validators;
 using Domain;
 using FluentValidation;
@@ -14,6 +15,12 @@ public class FactionService : IFactionService
     {
         _factionRepository = factionRepository ?? throw new NullReferenceException("IFactionRepository cannot be null.");
         _factionValidator = factionValidator ?? throw new NullReferenceException("FactionValidator cannot be null.");
+    }
+
+
+    public Faction CreateFaction(FactionRequest faction)
+    {
+        throw new NotImplementedException();
     }
 
     public Faction ReadFaction(int id)
@@ -32,4 +39,6 @@ public class FactionService : IFactionService
 
         return faction;
     }
+    
+    
 }
