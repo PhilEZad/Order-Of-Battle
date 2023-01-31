@@ -9,8 +9,6 @@ public class FactionService : IFactionService
     
     public FactionService(IFactionRepository factionRepository)
     {
-        
-        
         _factionRepository = factionRepository;
     }
 

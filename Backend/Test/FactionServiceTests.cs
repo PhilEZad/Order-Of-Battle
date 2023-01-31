@@ -1,8 +1,9 @@
 using Application;
 using Application.Interfaces;
+using Domain;
+using FluentAssertions;
 using FluentValidation;
 using Moq;
-using Xunit.Sdk;
 
 namespace Test;
 
@@ -11,21 +12,22 @@ public class FactionServiceTests
     [Fact]
     public void CreateFactionServiceOfTypeIFactionRepository_WithIFactoryRepositoryAsNull_ThrowsNullExceptionWithMessage()
     {
-        Assert.Throws<NullException>(() => new FactionService(null));
+        Action test = () => new FactionService(null);
+
+        test.Should().Throw<NullReferenceException>().WithMessage("IFactionRepository cannot be null");
     }
     
     [Fact]
-    public void ReadFaction_WithObjectAsNull_ShouldThrowNullExceptionWithMessage()
-    {
-    }
-
-    [Fact]
     public void ReadFaction_ReturningFactionAsNull_ShouldThrowNullExceptionWithMessage()
     {
-        var factionRepository = new Mock<IFactionRepository>().Object;
-        var factionService = new FactionService(factionRepository);
+        var factionRepository = new Mock<IFactionRepository>();
+        IFactionService factionService = new FactionService(factionRepository.Object);
 
-        Assert.Throws<NullException>(() => factionService.ReadFaction(1));
+        factionRepository.Setup(x => x.GetFactionById(It.IsAny<int>())).Returns((Faction)null);
+        
+        Action test = () => factionService.ReadFaction(1);
+
+        test.Should().Throw<NullReferenceException>().WithMessage("Faction does not exist.");
     }
 
     [Theory]
@@ -36,6 +38,8 @@ public class FactionServiceTests
         var factionRepository = new Mock<IFactionRepository>().Object;
         var factionService = new FactionService(factionRepository);
 
-        Assert.Throws<ValidationException>(() => factionService.ReadFaction(id));
+        Action test = () => factionService.ReadFaction(id);
+        
+        test.Should().Throw<ValidationException>().WithMessage("Faciton ID must be greater than 0.");
     }
 }
