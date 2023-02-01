@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers;
 
 [ApiController]
+[Route("[controller]")]
 public class DatabaseController
 {
     private readonly DatabaseRepository _databaseRepository;
@@ -14,6 +15,7 @@ public class DatabaseController
     }
 
     [HttpGet]
+    [Route("buildDB")]
     public void buildDB()
     {
         _databaseRepository.buildDB();

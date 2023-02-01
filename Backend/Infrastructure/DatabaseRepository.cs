@@ -6,7 +6,7 @@ public class DatabaseRepository
     
     public DatabaseRepository(DatabaseContext databaseContext)
     {
-        _dbContext = databaseContext ?? throw new NullReferenceException();
+        _dbContext = databaseContext ?? throw new NullReferenceException("DatabaseContext can not be null.");
     }
 
     public void buildDB()
