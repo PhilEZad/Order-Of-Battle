@@ -22,7 +22,8 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 });
 
 // Registering layers
-
+Application.DependencyResolver.DependencyResolver.RegisterApplicationLayer(builder.Services);
+Infrastructure.DependencyResolver.DependencyResolver.RegisterInfrastructureLayer(builder.Services);
 
 var app = builder.Build();
 
