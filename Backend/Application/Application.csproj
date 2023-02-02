@@ -12,14 +12,7 @@
 
     <ItemGroup>
       <PackageReference Include="FluentValidation" Version="11.4.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="DTOs\Request" />
-      <Folder Include="DTOs\Response" />
-      <Folder Include="Helpers" />
-      <Folder Include="Interfaces" />
-      <Folder Include="Validators" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     </ItemGroup>
 
 </Project>
