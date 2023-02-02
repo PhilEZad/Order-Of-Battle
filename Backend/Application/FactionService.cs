@@ -13,13 +13,12 @@ public class FactionService : IFactionService
     {
         _factionRepository = factionRepository ?? throw new NullReferenceException("IFactionRepository cannot be null.");
     }
-
-
-    public Faction CreateFaction(FactionRequest faction)
+    
+    public List<Faction> GetAllFactions()
     {
         throw new NotImplementedException();
     }
-
+    
     public Faction ReadFaction(int id)
     {
         if (id <= 0)
@@ -36,6 +35,4 @@ public class FactionService : IFactionService
 
         return faction;
     }
-    
-    
 }
