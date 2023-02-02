@@ -37,5 +37,8 @@ public class FactionService : IFactionService
         return faction;
     }
     
-    
+    public Faction UpdateFaction(Faction faction)
+    {
+        throw new NotImplementedException();
+    }
 }
