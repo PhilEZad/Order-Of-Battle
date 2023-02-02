@@ -3,6 +3,7 @@ using Application.Interfaces;
 using Domain;
 using FluentAssertions;
 using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 
 namespace Test;
@@ -41,5 +42,18 @@ public class FactionServiceTests
         Action test = () => factionService.ReadFaction(id);
         
         test.Should().Throw<ValidationException>().WithMessage("Faction ID must be greater than 0.");
+    }
+
+    [Fact]
+    public void GetAllFactions_RespondingWithNull_ShouldThrowNullExceptionWithMessage()
+    {
+        var factionRepository = new Mock<IFactionRepository>();
+        FactionService factionService = new FactionService(factionRepository.Object);
+
+        factionRepository.Setup(x => x.GetAllFactions()).Returns((List<Faction>)null);
+        
+        Action test = () => factionService.GetAllFactions();
+
+        test.Should().Throw<NullReferenceException>().WithMessage("Unable to fetch factions.");
     }
 }

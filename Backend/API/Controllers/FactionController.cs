@@ -16,6 +16,12 @@ public class FactionController
     }
 
     [HttpGet]
+    public List<Faction> GetAllFactions()
+    {
+        return _factionService.GetAllFactions();
+    }
+
+    [HttpGet]
     [Route("{id}")]
     public Faction GetFactionById([FromRoute] int id)
     {

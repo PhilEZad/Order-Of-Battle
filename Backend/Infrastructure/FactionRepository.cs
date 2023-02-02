@@ -11,6 +11,11 @@ public class FactionRepository : IFactionRepository
     {
         _context = context ?? throw new NullReferenceException("DatabaseContext can not be null.");;
     }
+    
+    public List<Faction> GetAllFactions()
+    {
+        return _context.FactionsTable.ToList();
+    }
     public Faction GetFactionById(int id)
     {
         return _context.FactionsTable.Find(id);
