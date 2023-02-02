@@ -1,5 +1,4 @@
-﻿using Application;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,15 +9,15 @@ namespace API.Controllers;
 public class FactionController
 {
     private readonly IFactionService _factionService;
-    
-    public FactionController(FactionService factionService)
+
+    public FactionController(IFactionService factionService)
     {
         _factionService = factionService ?? throw new NullReferenceException("Faction Service can not be null.");
     }
 
     [HttpGet]
-    [Route("id")]
-    public Faction GetFactionById(int id)
+    [Route("{id}")]
+    public Faction GetFactionById([FromRoute] int id)
     {
         return _factionService.ReadFaction(id);
     }

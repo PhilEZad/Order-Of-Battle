@@ -9,7 +9,7 @@ public class FactionRepository : IFactionRepository
     
     public FactionRepository(DatabaseContext context)
     {
-        _context = context ?? throw new NullReferenceException("DatbaseContext can not be null.");;
+        _context = context ?? throw new NullReferenceException("DatabaseContext can not be null.");;
     }
     public Faction GetFactionById(int id)
     {

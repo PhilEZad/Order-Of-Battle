@@ -1,4 +1,5 @@
 ﻿using Infrastructure;
+using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -7,9 +8,9 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class DatabaseController
 {
-    private readonly DatabaseRepository _databaseRepository;
+    private readonly IDatabaseRepository _databaseRepository;
     
-    public DatabaseController(DatabaseRepository databaseRepository)
+    public DatabaseController(IDatabaseRepository databaseRepository)
     {
         _databaseRepository = databaseRepository ?? throw new NullReferenceException("DatabaseRepository can not be empty.");
     }

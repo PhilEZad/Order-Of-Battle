@@ -1313,5 +1313,58 @@
     <argument id="481" parent="165">
       <Position>1</Position>
     </argument>
+    <table id="482" parent="166" name="FactionsTable"/>
+    <table id="483" parent="166" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="484" parent="166" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="485" parent="482" name="factionId">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="486" parent="482" name="factionName">
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="487" parent="482" name="factionDescription">
+      <DataType>TEXT|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <key id="488" parent="482" name="PK_Faction">
+      <ColNames>factionId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="489" parent="483" name="type">
+      <DataType>TEXT|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="490" parent="483" name="name">
+      <DataType>TEXT|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="491" parent="483" name="tbl_name">
+      <DataType>TEXT|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="492" parent="483" name="rootpage">
+      <DataType>INT|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="493" parent="483" name="sql">
+      <DataType>TEXT|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="494" parent="484" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="495" parent="484" name="seq">
+      <Position>2</Position>
+    </column>
   </database-model>
 </dataSource>

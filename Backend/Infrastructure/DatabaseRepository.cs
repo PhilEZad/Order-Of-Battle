@@ -1,6 +1,8 @@
-﻿namespace Infrastructure;
+﻿using Infrastructure.Interfaces;
 
-public class DatabaseRepository
+namespace Infrastructure;
+
+public class DatabaseRepository : IDatabaseRepository
 {
     private readonly DatabaseContext _dbContext;
     
