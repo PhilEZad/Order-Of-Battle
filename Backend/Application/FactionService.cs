@@ -16,7 +16,14 @@ public class FactionService : IFactionService
     
     public List<Faction> GetAllFactions()
     {
-        throw new NotImplementedException();
+        List<Faction> factionList = _factionRepository.GetAllFactions();
+
+        if (factionList == null || factionList.Count == 0)
+        {
+            throw new NullReferenceException("Unable to fetch factions.");
+        }
+
+        return factionList;
     }
     
     public Faction ReadFaction(int id)

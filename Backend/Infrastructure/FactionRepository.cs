@@ -14,7 +14,7 @@ public class FactionRepository : IFactionRepository
     
     public List<Faction> GetAllFactions()
     {
-        throw new NotImplementedException();
+        return _context.FactionsTable.ToList();
     }
     public Faction GetFactionById(int id)
     {
