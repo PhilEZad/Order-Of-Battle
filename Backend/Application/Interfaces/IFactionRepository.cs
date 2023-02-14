@@ -6,4 +6,5 @@ public interface IFactionRepository
 {
     public List<Faction> GetAllFactions();
     public Faction GetFactionById(int id);
+    public Faction UpdateFaction(Faction faction);
 }

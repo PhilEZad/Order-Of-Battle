@@ -20,4 +20,9 @@ public class FactionRepository : IFactionRepository
     {
         return _context.FactionsTable.Find(id);
     }
+
+    public Faction UpdateFaction(Faction faction)
+    {
+        throw new NotImplementedException();
+    }
 }
