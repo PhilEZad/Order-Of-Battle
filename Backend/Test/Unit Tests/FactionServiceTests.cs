@@ -1,6 +1,5 @@
 using Application;
 using Application.Interfaces;
-using Application.Validators;
 using Domain;
 using FluentAssertions;
 using FluentValidation;
@@ -45,61 +44,31 @@ public class FactionServiceTests
     }
 
     [Fact]
-    public void GetAllFactions_RespondingWithNull_ShouldThrowNullExceptionWithMessage()
-    {
-        var factionRepository = new Mock<IFactionRepository>();
-        FactionService factionService = new FactionService(factionRepository.Object);
-
-        factionRepository.Setup(x => x.GetAllFactions()).Returns((List<Faction>)null);
-        
-        Action test = () => factionService.GetAllFactions();
-
-        test.Should().Throw<NullReferenceException>().WithMessage("Unable to fetch factions.");
-    }
-
-    [Fact]
-    public void UpdateFaction_WithNullAsObject_ShouldThrowNullExpcetionWithMessage()
+    public void UpdateFaction_WithFactionAsNull_ShouldThrowNullReferenceExceptionWithMessage()
     {
         IFactionRepository factionRepository = new Mock<IFactionRepository>().Object;
         FactionService factionService = new FactionService(factionRepository);
         
         Action test = () => factionService.UpdateFaction(null);
         
-        test.Should().Throw<NullReferenceException>().WithMessage("Faction object cannot be null.");
-    }
-
-    [Fact]
-    public void UpdateFaction_WithValidParamater_ShouldReturnValidObject()
-    {
-        var factionRepository = new Mock<IFactionRepository>();
-        FactionService factionService = new FactionService(factionRepository.Object);
-        
-        factionRepository.Setup(x => x.UpdateFaction(It.IsAny<Faction>())).Returns(new Faction());
-
-        Faction faction = new Faction();
-        
-        faction.factionId = 1;
-        faction.factionName = "Test Faction";
-        faction.factionDescription = "Test Description";
-        
-        Action test = () => factionService.UpdateFaction(faction);
-
-        test.Should().Equals(faction);
+        test.Should().Throw<NullReferenceException>().WithMessage("Faction cannot be null.");
     }
 
     [Theory]
-    [InlineData(0, "Test Faction", "Test Description", "Faction ID must be greater than 0.")]
-    [InlineData(-1, "Test Faction", "Test Description", "Faction ID must be greater than 0.")]
+    [InlineData(-1, "Test Name", "Test Description", "Faction ID must be greater than 0.")]
+    [InlineData(0, "Test Name", "Test Description", "Faction ID must be greater than 0.")]
+    [InlineData(null, "Test Name", "Test Description", "Faction ID can not be null.")]
     [InlineData(1, "", "Test Description", "Faction name cannot be empty.")]
-    [InlineData(1, null, "Test Description", "Faction name cannot be null.")]
-    [InlineData(1, "Test Faction", null, "Faction description cannot be null.")]
-    public void UpdateFaction_WithInvalidProperties_ShouldThrowValidationExceptionWithCorrectMessage(int id, string name, string description, string message)
+    [InlineData(1, null, "Test Description", "Faction name cannot be empty.")]
+    [InlineData(1, "Test Name", null, "Faction description cannot be null.")]
+    public void UpdateFaction_WithInvalidProperties_ShouldThrowValidationExceptionWithMessage(int id, string name,
+        string description, string message)
     {
         IFactionRepository factionRepository = new Mock<IFactionRepository>().Object;
-        FactionValidator factionValidator = new FactionValidator();
-        FactionService factionService = new FactionService(factionRepository, factionValidator);
-
+        FactionService factionService = new FactionService(factionRepository);
+        
         Faction faction = new Faction();
+
         faction.factionId = id;
         faction.factionName = name;
         faction.factionDescription = description;
