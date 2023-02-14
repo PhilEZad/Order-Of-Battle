@@ -13,19 +13,13 @@ public class FactionService : IFactionService
     {
         _factionRepository = factionRepository ?? throw new NullReferenceException("IFactionRepository cannot be null.");
     }
-    
-    public List<Faction> GetAllFactions()
+
+
+    public Faction CreateFaction(FactionRequest faction)
     {
-        List<Faction> factionList = _factionRepository.GetAllFactions();
-
-        if (factionList == null || factionList.Count == 0)
-        {
-            throw new NullReferenceException("Unable to fetch factions.");
-        }
-
-        return factionList;
+        throw new NotImplementedException();
     }
-    
+
     public Faction ReadFaction(int id)
     {
         if (id <= 0)
@@ -41,5 +35,10 @@ public class FactionService : IFactionService
         }
 
         return faction;
+    }
+    
+    public Faction UpdateFaction(Faction faction)
+    {
+        throw new NotImplementedException();
     }
 }

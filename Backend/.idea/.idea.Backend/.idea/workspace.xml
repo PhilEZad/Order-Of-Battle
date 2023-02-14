@@ -5,11 +5,21 @@
     <projectFile profileName="IIS Express">API/API.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98f1d7e-6eac-466e-9c9d-bbd0e45694b0" name="Changes" comment="" />
+    <list default="true" id="f98f1d7e-6eac-466e-9c9d-bbd0e45694b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Backend/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Backend/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/FactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/FactionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Unit Tests/FactionServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Unit Tests/FactionServiceTests.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/64277dff601943485f1ce8e1d4b72d961f81f957ac2be4877a778a938ba582c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -22,17 +32,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
-    ]
   }
 }</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.API">
@@ -77,6 +79,9 @@
       <updated>1675024726705</updated>
       <workItem from="1675024729337" duration="440000" />
       <workItem from="1675250922776" duration="3014000" />
+      <workItem from="1675354624784" duration="2000" />
+      <workItem from="1675426551856" duration="2429000" />
+      <workItem from="1675482615155" duration="87000" />
     </task>
     <servers />
   </component>
