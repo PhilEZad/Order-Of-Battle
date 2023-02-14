@@ -36,7 +36,12 @@ public class FactionService : IFactionService
 
         return faction;
     }
-    
+
+    public List<Faction> GetAllFactions()
+    {
+        throw new NotImplementedException();
+    }
+
     public Faction UpdateFaction(Faction faction)
     {
         throw new NotImplementedException();
