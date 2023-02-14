@@ -18,7 +18,12 @@ public class DatabaseContext : DbContext
             .HasKey(f => f.factionId)
             .HasName("PK_Faction");
         
+        modelBuilder.Entity<Stratagem>()
+            .HasKey(s => s.stratagemId)
+            .HasName("PK_Stratagem");
+        
         //Required Properties
+            //Faction
         modelBuilder.Entity<Faction>()
             .Property(f => f.factionId)
             .IsRequired()
@@ -28,7 +33,19 @@ public class DatabaseContext : DbContext
             .Property(f => f.factionName)
             .IsRequired()
             .IsUnicode();
+        
+            //Stratagem
+        modelBuilder.Entity<Stratagem>()
+            .Property(s => s.stratagemId)
+            .IsRequired()
+            .IsUnicode();
+        
+        modelBuilder.Entity<Stratagem>()
+            .Property(s => s.stratagemName)
+            .IsRequired()
+            .IsUnicode();
     }
     
     public DbSet<Faction> FactionsTable { get; set; }
+    public DbSet<Stratagem> StratagemsTable { get; set; }
 }

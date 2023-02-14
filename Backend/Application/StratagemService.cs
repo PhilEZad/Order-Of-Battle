@@ -1,11 +1,19 @@
-﻿namespace Application;
+﻿using Application.Interfaces;
+using Domain;
+
+namespace Application;
 
 public class StratagemService : IStratagemService
 {
-    private readonly IStratagemService _stratagemService;
+    private readonly IStratagemRepository _stratagemRepository;
     
-    public StratagemService(IStratagemService stratagemService)
+    public StratagemService(IStratagemRepository stratagemRepository)
     {
-        _stratagemService = stratagemService ?? throw new NullReferenceException("IStratagemService cannot be null.");;
+        _stratagemRepository = stratagemRepository ?? throw new NullReferenceException("IStratagemService cannot be null.");;
+    }
+
+    public List<Stratagem> GetAllStratagems()
+    {
+        return _stratagemRepository.GetAllStratagems();
     }
 }

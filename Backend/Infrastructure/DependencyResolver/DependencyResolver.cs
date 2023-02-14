@@ -10,5 +10,6 @@ public class DependencyResolver
     {
         service.AddScoped<IFactionRepository, FactionRepository>();
         service.AddScoped<IDatabaseRepository, DatabaseRepository>();
+        service.AddScoped<IStratagemRepository, StratagemRepository>();
     }
 }
