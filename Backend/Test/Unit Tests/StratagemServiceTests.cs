@@ -1,4 +1,7 @@
-﻿namespace Test;
+﻿using Application;
+using FluentAssertions;
+
+namespace Test;
 
 public class StratagemServiceTests
 {
@@ -7,7 +10,7 @@ public class StratagemServiceTests
     {
         Action test = () => new StratagemService(null);
 
-        test.Should().Throw<NullReferenceException>().WithMessage("IStratagemRepository cannot be null.");
+        test.Should().Throw<NullReferenceException>().WithMessage("IStratagemService cannot be null.");
     }
 }
     
