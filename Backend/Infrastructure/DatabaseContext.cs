@@ -10,20 +10,20 @@ public class DatabaseContext : DbContext
     {
         
     }
-    
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         //Setting Primary Keys
         modelBuilder.Entity<Faction>()
             .HasKey(f => f.factionId)
             .HasName("PK_Faction");
-        
+
         modelBuilder.Entity<Stratagem>()
             .HasKey(s => s.stratagemId)
             .HasName("PK_Stratagem");
-        
+
         //Required Properties
-            //Faction
+        //Faction
         modelBuilder.Entity<Faction>()
             .Property(f => f.factionId)
             .IsRequired()
@@ -33,19 +33,10 @@ public class DatabaseContext : DbContext
             .Property(f => f.factionName)
             .IsRequired()
             .IsUnicode();
-        
-            //Stratagem
-        modelBuilder.Entity<Stratagem>()
-            .Property(s => s.stratagemId)
-            .IsRequired()
-            .IsUnicode();
-        
-        modelBuilder.Entity<Stratagem>()
-            .Property(s => s.stratagemName)
-            .IsRequired()
-            .IsUnicode();
+
+        //Stratagem
     }
-    
+
     public DbSet<Faction> FactionsTable { get; set; }
     public DbSet<Stratagem> StratagemsTable { get; set; }
 }

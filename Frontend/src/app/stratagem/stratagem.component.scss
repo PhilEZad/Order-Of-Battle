@@ -1,0 +1,33 @@
+.titleStratagem
+{
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+.cpStratagem
+{
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.cardStratagem
+{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  list-style: circle;
+  display: block;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 20em;
+  min-width: 15em;
+  max-width: 30em;
+  max-height: 30em;
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}

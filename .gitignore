@@ -398,6 +398,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+*.idea
 
 #Database file
 *.db
@@ -405,5 +406,3 @@ FodyWeavers.xsd
 *.db-wal
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
-Backend/.idea/.idea.Backend/.idea/workspace.xml
-Backend/.idea/.idea.Backend/.idea/workspace.xml
