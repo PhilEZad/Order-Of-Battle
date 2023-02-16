@@ -1,14 +1,4 @@
-.titleStratagem
-{
-  margin-left: 0px;
-  margin-right: auto;
-  color: white;
-}
-
-.cpStratagem
-{
-  margin-left: auto;
-  margin-right: 5px;
+h2 {
   color: white;
 }
 
@@ -17,16 +7,24 @@
   background-color: #304c64;
   height: 2.2em;
   margin-bottom: 0.5em;
+  justify-content: space-between;
+}
+
+.titleStratagem
+{
+  margin-left: 8px;
+  margin-right: auto;
+}
+
+.cpStratagem{
+  margin-right: 8px;
+  margin-left: auto;
 }
 
 .subtitleStratagem
 {
   margin-top: 0.0em;
   margin-bottom: 0.0em;
-}
-
-.contentStratagem {
-  margin-top: 0.0em;
 }
 
 .flavourTextStratagem
@@ -42,7 +40,7 @@
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: stretch;
-  min-width: 30em;
+  min-width: 0em;
   max-width: 30em;
   max-height: 100em;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
