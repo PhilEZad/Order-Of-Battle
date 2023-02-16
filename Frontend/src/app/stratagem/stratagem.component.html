@@ -1,19 +1,19 @@
 <mat-card class="cardStratagem">
+
   <mat-card-header class="headerStratagem">
     <div class="titleStratagem">
       <h2><b>{{title}}</b></h2>
     </div>
     <div class="cpStratagem">
-      <h2><b>{{cp}} CP</b></h2>
+      <h2><b>{{cp}}CP</b></h2>
     </div>
   </mat-card-header>
-  <mat-card-subtitle>
 
+  <mat-card-subtitle class="subtitleStratagem">
     <p>
       <i><b>{{subtitle}}</b></i>
     </p>
-
-</mat-card-subtitle>
+  </mat-card-subtitle>
 
   <mat-card-content>
     <p>
@@ -26,4 +26,5 @@
       <li *ngFor="let string of list">{{string}}</li>
     </ul>
   </mat-card-content>
+
 </mat-card>

@@ -1,33 +1,38 @@
 .titleStratagem
 {
-  margin-left: 20px;
+  margin-left: 0px;
   margin-right: auto;
+}
+
+h2 {
+  color: white;
 }
 
 .cpStratagem
 {
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 5px;
+}
+
+.headerStratagem
+{
+  background-color: #304c64;
+  height: 2.2em;
+  margin-bottom: 10px;
 }
 
 .cardStratagem
 {
-  margin: 0.5rem;
-  padding: 0.5rem;
-  list-style: circle;
-  display: block;
+  margin: 1rem;
+  padding: 0.2rem;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   align-content: center;
   height: 20em;
-  min-width: 15em;
+  min-width: 30em;
   max-width: 30em;
   max-height: 30em;
-  border-radius: 10px;
-  border-width: 3px;
-  border-style: solid;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
