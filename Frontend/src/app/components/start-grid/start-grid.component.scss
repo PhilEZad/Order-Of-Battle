@@ -11,13 +11,12 @@
 }
 
 .stratGrid {
-
-
-  background-color: black;
   margin: auto;
 
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+
 
   row-gap: 10px;
 
