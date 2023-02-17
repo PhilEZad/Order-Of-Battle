@@ -9,7 +9,7 @@ import { StratagemComponent } from './components/stratagem/stratagem.component';
 import { MatCardModule } from "@angular/material/card";
 import { StartGridComponent } from './components/start-grid/start-grid.component';
 import { FilterComponent } from './components/filter/filter.component';
-
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -24,7 +24,8 @@ import { FilterComponent } from './components/filter/filter.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

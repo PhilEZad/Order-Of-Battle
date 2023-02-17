@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stratagem } from "../../interfaces/Stratagem";
 import { StratagemService } from "../../services/stratagem.service";
+import {countOccurrences} from "@angular-devkit/build-angular/src/webpack/plugins/analytics";
 
 
 @Component({
@@ -10,6 +11,7 @@ import { StratagemService } from "../../services/stratagem.service";
 })
 export class StartGridComponent implements OnInit {
   stratList: Stratagem[] = []
+  selectedFilterButton: string = 'Movement'
   constructor(private stratagemService: StratagemService)
   {
 
@@ -17,11 +19,15 @@ export class StartGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStratagems();
-    console.log(this.stratList)
   }
 
   getStratagems(): void
   {
     this.stratList = this.stratagemService.getStratagems();
+  }
+
+  onFilterButtonPressed(data: string)
+  {
+    this.selectedFilterButton = data;
   }
 }
