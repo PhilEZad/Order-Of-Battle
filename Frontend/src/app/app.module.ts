@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StratagemComponent } from './components/stratagem/stratagem.component';
 import { MatCardModule } from "@angular/material/card";
 import { StartGridComponent } from './components/start-grid/start-grid.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 
 
@@ -16,7 +17,8 @@ import { StartGridComponent } from './components/start-grid/start-grid.component
     AppComponent,
     DashboardComponent,
     StratagemComponent,
-    StartGridComponent
+    StartGridComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
