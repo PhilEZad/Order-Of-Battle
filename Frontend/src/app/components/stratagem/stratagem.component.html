@@ -1,6 +1,6 @@
 <mat-card class="cardStratagem">
 
-  <mat-card-header class="headerStratagem" id = "testid">
+  <mat-card-header [ngStyle]="{'background-color': selectedStratagem?.colour}" class="headerStratagem">
     <div class="titleStratagem">
       <h2><b>{{selectedStratagem?.title}}</b></h2>
     </div>

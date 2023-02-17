@@ -1,11 +1,24 @@
 .startContainer {
-  max-width: 960px;
+  max-width: 920px;
   margin: auto;
 }
 
 .phaseButtons {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.stratGrid {
+
+
+  background-color: black;
+  margin: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  row-gap: 10px;
+
 }
