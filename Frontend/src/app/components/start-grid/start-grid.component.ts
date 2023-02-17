@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Stratagem } from "../../interfaces/Stratagem";
+import { StratagemService } from "../../services/stratagem.service";
 
 
 @Component({
@@ -8,10 +9,18 @@ import { Stratagem } from "../../interfaces/Stratagem";
   styleUrls: ['./start-grid.component.scss']
 })
 export class StartGridComponent implements OnInit {
-
   stratList: Stratagem[] = []
-  constructor() { }
+  constructor(private stratagemService: StratagemService)
+  {
+
+  }
 
   ngOnInit(): void {
+    this.getStratagems();
+  }
+
+  getStratagems(): void
+  {
+    this.stratList = this.stratagemService.getStratagems();
   }
 }

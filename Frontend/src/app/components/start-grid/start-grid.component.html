@@ -12,7 +12,7 @@
     <input type="text">
   </div>
 
-  <div *ngFor="let stratagem of stratList" class="stratGrid">
-
+  <div *ngFor="let stratagem in stratList" class="stratGrid">
+    <app-stratagem [selectedStratagem]="stratagem"></app-stratagem>
   </div>
 </div>

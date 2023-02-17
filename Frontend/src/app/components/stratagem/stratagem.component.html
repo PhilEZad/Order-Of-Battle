@@ -2,31 +2,31 @@
 
   <mat-card-header class="headerStratagem" id = "testid">
     <div class="titleStratagem">
-      <h2><b>{{stratagem.title}}</b></h2>
+      <h2><b>{{selectedStratagem?.title}}</b></h2>
     </div>
     <div class="cpStratagem">
-      <h2><b>{{stratagem.cpCost}}</b></h2>
+      <h2><b>{{selectedStratagem?.cpCost}}</b></h2>
     </div>
   </mat-card-header>
 
   <mat-card-subtitle class="subtitleStratagem">
     <p>
-      <i><b>{{stratagem.subtitle}}</b></i>
+      <i><b>{{selectedStratagem?.subtitle}}</b></i>
     </p>
   </mat-card-subtitle>
 
   <mat-card-content class="contentStratagem">
     <p class="flavourTextStratagem">
-      <i>{{stratagem.flavourText}}</i>
+      <i>{{selectedStratagem?.flavourText}}</i>
     </p>
     <p class="descriptionTopStratagem">
-      {{stratagem.descriptionTop}}
+      {{selectedStratagem?.descriptionTop}}
     </p>
     <ul>
-      <li *ngFor="let string of stratagem.list">{{string}}</li>
+      <li *ngFor="let string of selectedStratagem?.list">{{string}}</li>
     </ul>
     <p class="descriptionBottomStratagem">
-      {{stratagem.descriptionBottom}}
+      {{selectedStratagem?.descriptionBottom}}
     </p>
   </mat-card-content>
 

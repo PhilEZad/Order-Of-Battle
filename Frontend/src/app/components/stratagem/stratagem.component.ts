@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import { Stratagem } from "../../interfaces/Stratagem";
 
 @Component({
@@ -7,7 +7,7 @@ import { Stratagem } from "../../interfaces/Stratagem";
   styleUrls: ['./stratagem.component.scss']
 })
 export class StratagemComponent implements OnInit, AfterViewInit {
-  @Input() stratagem?: Stratagem;
+  @Input() selectedStratagem?: Stratagem;
 
   constructor() {
   }
