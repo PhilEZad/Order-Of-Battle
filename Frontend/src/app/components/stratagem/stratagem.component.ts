@@ -13,6 +13,7 @@ export class StratagemComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    console.log(this.selectedStratagem)
   }
 
   ngAfterViewInit() {

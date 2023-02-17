@@ -17,6 +17,7 @@ export class StartGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStratagems();
+    console.log(this.stratList)
   }
 
   getStratagems(): void

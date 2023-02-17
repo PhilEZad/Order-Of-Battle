@@ -10,9 +10,8 @@ export class StratagemService {
 
   constructor() { }
 
-  getStratagems(): Observable<Stratagem[]>
+  getStratagems(): Stratagem[]
   {
-    const stratagems = of(mockStratagems)
-    return stratagems;
+    return mockStratagems;
   }
 }
