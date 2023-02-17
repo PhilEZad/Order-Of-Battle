@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { StratagemComponent } from './stratagem/stratagem.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { StratagemComponent } from './components/stratagem/stratagem.component';
 import { MatCardModule } from "@angular/material/card";
+import { StartGridComponent } from './components/start-grid/start-grid.component';
 
 
 
@@ -14,7 +15,8 @@ import { MatCardModule } from "@angular/material/card";
   declarations: [
     AppComponent,
     DashboardComponent,
-    StratagemComponent
+    StratagemComponent,
+    StartGridComponent
   ],
   imports: [
     BrowserModule,

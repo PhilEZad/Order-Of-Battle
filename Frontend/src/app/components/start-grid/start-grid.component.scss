@@ -1,0 +1,11 @@
+.startContainer {
+  max-width: 960px;
+  margin: auto;
+}
+
+.phaseButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}

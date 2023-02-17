@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import { Stratagem } from "../../interfaces/Stratagem";
 
 @Component({
   selector: 'app-stratagem',
@@ -14,7 +15,7 @@ export class StratagemComponent implements OnInit, AfterViewInit {
   descriptionTop = 'Use this Stratagem in your Shooting phase, when a BREACHER TEAM unit from your army is selected to shoot. Until the end of the phase, each time a CORE model in that unit makes a ranged attack:'
   descriptionBottom = ''
   list: any[] = ['The target does not receive the benefits of cover against that attack.', 'You can re-roll the wound roll.'];
-  color = 'requisition'
+  color = 'epic'
 
   constructor() {
   }
@@ -55,10 +56,12 @@ export class StratagemComponent implements OnInit, AfterViewInit {
           header.style.backgroundColor = '#60686a';
           break;
         }
+        default:
+        {
+          header.style.backgroundColor = 'yellow'
+          break;
+        }
       }
-    } else
-    {
-
     }
   }
 }
