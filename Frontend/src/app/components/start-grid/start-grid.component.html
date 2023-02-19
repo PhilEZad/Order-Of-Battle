@@ -4,9 +4,7 @@
     <app-filter (filterSelectionEvent)="onFilterButtonPressed($event)"  ></app-filter>
   </div>
 
-  <ng-container *ngFor="let stratagem of stratList">
-  <div class="stratGrid" *ngIf="selectedFilterButton === '' || selectedFilterButton === stratagem.Phase" >
-    <app-stratagem [selectedStratagem]="stratagem"></app-stratagem>
+  <div class="stratGrid">
+      <app-stratagem *ngFor="let stratagem of stratList" [selectedStratagem]="stratagem"></app-stratagem>
   </div>
-  </ng-container>
 </div>
