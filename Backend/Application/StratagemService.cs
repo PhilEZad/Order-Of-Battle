@@ -15,5 +15,8 @@ public class StratagemService : IStratagemService
     public List<Stratagem> GetAllStratagems()
     {
         return _stratagemRepository.GetAllStratagems();
+        {
+            
+        }
     }
 }

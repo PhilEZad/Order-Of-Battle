@@ -1,11 +1,11 @@
 <div class="phaseButtons">
 
-  <button value="Command"
+  <input type="button" value="Command"
           [(ngModel)]="selectedFilterValue"
           (change)="onFilterButtonSelection()"
-          >Command</button>
+          />
 
-  <input type="radio" value="Movement"
+  <input type="button" value="Movement"
          [(ngModel)]="selectedFilterValue"
          (change)="onFilterButtonSelection()"/>
 
@@ -29,6 +29,6 @@
           [(ngModel)]="selectedFilterValue"
           (change)="onFilterButtonSelection()"/>
 
-  <input type="text">
+  <input type="text" class="searchBar">
 
 </div>

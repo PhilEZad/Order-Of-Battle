@@ -7,8 +7,7 @@ export interface Stratagem
   flavourText: string;
   descriptionTop: string;
   descriptionBottom: string;
-  list: string[];
-  Phase: string;
-  Type: string;
+  modifiersList: string[];
+  Tags: string[];
   colour: string;
 }
