@@ -8,6 +8,7 @@ export interface Stratagem
   descriptionTop: string;
   descriptionBottom: string;
   modifiersList: string[];
-  Tags: string[];
+  Phase: string;
+  Type: string;
   colour: string;
 }
